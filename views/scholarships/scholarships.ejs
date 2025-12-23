@@ -37,9 +37,8 @@
             <label>Gender</label>
             <select name="gender">
               <option value="">All</option>
-              <option value="Male" <%= filters.gender === 'Male' ? 'selected' : '' %>>Male</option>
               <option value="Female" <%= filters.gender === 'Female' ? 'selected' : '' %>>Female</option>
-              <option value="Both" <%= filters.gender === 'Both' ? 'selected' : '' %>>Both</option>
+              <option value="Both" <%= filters.gender === 'Both' ? 'selected' : '' %>>General (male + female)</option>
             </select>
           </div>
 

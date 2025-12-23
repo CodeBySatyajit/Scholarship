@@ -58,7 +58,7 @@ const scholarshipSchema = new Schema({
     Gender : {
         type : String,
         required : false,
-        enum : ['male', 'female', 'both']
+        enum : [ 'female', 'both']
     },
 
     Religion : {

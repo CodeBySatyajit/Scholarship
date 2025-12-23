@@ -152,10 +152,8 @@
         name="Gender"
         value="<%=scholarship.Gender %>"
       >
-      
-          <option value="male" <%= scholarship.Gender === 'male' ? 'selected' : '' %>>Male</option>
           <option value="female" <%= scholarship.Gender === 'female' ? 'selected' : '' %>>Female</option>
-          <option value="both" <%= scholarship.Gender === 'both' ? 'selected' : '' %>>Both</option>
+          <option value="both" <%= scholarship.Gender === 'both' ? 'selected' : '' %>>General (male + female)</option>
       </select>
     </div>
 
