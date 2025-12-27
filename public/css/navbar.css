@@ -116,13 +116,14 @@
 .search-bar {
 	display: inline-flex;
 	align-items: center;
-	gap: 0.55rem;
-	padding: 0.3rem 0.45rem 0.3rem 0.65rem;
+	gap: 0;
+	padding: 0.3rem 0.45rem;
 	background: rgba(255, 255, 255, 0.92);
 	border-radius: 14px;
 	border: 1px solid var(--nav-border);
 	box-shadow: 0 10px 26px rgba(79, 70, 229, 0.12), 0 0 0 1px rgba(255, 255, 255, 0.9);
 	min-width: 280px;
+	position: relative;
 }
 
 .search-bar input[type="search"] {
@@ -132,6 +133,7 @@
 	color: var(--nav-text);
 	font-weight: 600;
 	font-size: 0.98rem;
+	padding-left: 2.8rem; /* increased space for icon gap */
 }
 
 .search-bar input[type="search"]::placeholder {
@@ -141,6 +143,17 @@
 
 .search-bar input[type="search"]:focus {
 	outline: none;
+}
+
+.search-bar i {
+	position: absolute;
+	left: 0.8rem;
+	top: 50%;
+	transform: translateY(-50%);
+	pointer-events: none;
+	color: var(--nav-muted);
+	font-size: 1rem;
+	transition: color 0.18s ease, transform 0.18s ease;
 }
 
 .search-section i {
