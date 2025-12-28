@@ -1229,8 +1229,161 @@
     margin: 0 0.3rem;
   }
 
-  /* Responsive Footer */
+  /* ===== RESPONSIVE DESIGN ===== */
+  
+  /* Tablet Breakpoint (768px and below) */
   @media (max-width: 768px) {
+    /* Header Navigation */
+    .header-nav {
+      gap: 0.8rem;
+    }
+
+    .header-nav a {
+      font-size: 0.9rem;
+    }
+
+    .search-section .search-bar input {
+      width: 200px;
+      min-width: 150px;
+      font-size: 0.9rem;
+      height: 2rem;
+    }
+
+    /* Hero Section */
+    .big-div {
+      flex-direction: column;
+      gap: 1.5rem;
+      padding: 1.5rem !important;
+      margin-top: 0 !important;
+    }
+
+    .big-div .div1 {
+      gap: 1.2rem;
+      text-align: center;
+    }
+
+    .big-div .div2 {
+      width: 100%;
+    }
+
+    .hero-badge {
+      justify-content: center;
+      font-size: 0.9rem;
+      padding: 0.5rem 0.8rem;
+    }
+
+    .hero-eyebrow {
+      font-size: 1rem !important;
+    }
+
+    .hero-title {
+      font-size: 0.95rem !important;
+    }
+
+    .header-2-nav {
+      justify-content: center;
+      gap: 0.75rem;
+    }
+
+    .hero-primary-btn,
+    .hero-secondary-btn {
+      padding: 0.75rem 1rem;
+      font-size: 0.9rem;
+    }
+
+    .header-2-data {
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .metric-value {
+      font-size: 1.6rem;
+    }
+
+    .metric-label {
+      font-size: 0.9rem;
+    }
+
+    .hero-image {
+      min-height: 300px;
+    }
+
+    /* Section 1 - Trending Scholarships */
+    .section1 {
+      padding: 2rem 1rem !important;
+    }
+
+    .section1-header h3 {
+      font-size: 1.5rem;
+    }
+
+    .section1-cards-div {
+      grid-template-columns: 1fr;
+      gap: 1.2rem;
+    }
+
+    .section1-card {
+      padding: 1.2rem;
+    }
+
+    /* Section 2 - News */
+    .section2 {
+      padding: 2rem 1rem !important;
+    }
+
+    .section2-1 h5 {
+      font-size: 1.5rem;
+    }
+
+    .section2-2 {
+      grid-template-columns: 1fr;
+      gap: 1.2rem;
+    }
+
+    .section2-card {
+      padding: 1rem;
+    }
+
+    /* Section 3 - Success Stories */
+    .section3 {
+      padding: 2rem 1rem !important;
+    }
+
+    .success-header h2 {
+      font-size: 1.5rem;
+    }
+
+    .success-cards-div {
+      grid-template-columns: 1fr;
+      gap: 1.2rem;
+    }
+
+    .success-card {
+      padding: 1.2rem;
+    }
+
+    .profile-img {
+      width: 60px;
+      height: 60px;
+      font-size: 1.5rem;
+    }
+
+    /* Categories Section */
+    .categories-section {
+      padding: 2rem 1rem !important;
+    }
+
+    .categories-title {
+      font-size: 1.5rem;
+    }
+
+    .categories-grid {
+      grid-template-columns: 2fr 1fr;
+      gap: 1rem;
+    }
+
+    /* Footer */
     .footer {
       padding: 2.5rem 1rem 1.5rem;
     }
@@ -1260,20 +1413,197 @@
 
     .newsletter-form {
       flex-direction: row;
+      gap: 0.5rem;
     }
 
     .newsletter-form input {
       flex: 1;
+      padding: 0.7rem;
+      font-size: 0.9rem;
     }
 
     .sub-btn {
       flex: 0 0 auto;
+      padding: 0.7rem 1rem;
+      font-size: 0.85rem;
+    }
+
+    /* Popup */
+    .popup {
+      width: 90vw;
+      max-height: 80vh;
+      max-width: 500px;
     }
   }
 
-  @media (max-width: 480px) {
+  /* Mobile Breakpoint (640px and below) */
+  @media (max-width: 640px) {
+    /* Header Navigation */
+    .header-logo h1 {
+      font-size: 1rem;
+      margin-left: 0.5rem;
+    }
+
+    .header-nav {
+      display: none;
+    }
+
+    .search-section {
+      order: 3;
+      width: calc(100% - 2rem);
+    }
+
+    .search-section .search-bar input {
+      width: 100%;
+      min-width: unset;
+      font-size: 0.85rem;
+      height: 1.8rem;
+      padding: 0.4rem;
+    }
+
+    .search-section .search-bar i {
+      margin: 0 0.4rem;
+    }
+
+    /* Hero Section */
+    .header-2 {
+      padding: 1.5rem 0;
+    }
+
+    .big-div {
+      gap: 1rem;
+      padding: 1rem !important;
+    }
+
+    .big-div .div1 {
+      gap: 0.8rem;
+    }
+
+    .hero-badge {
+      font-size: 0.8rem;
+      padding: 0.4rem 0.6rem;
+    }
+
+    .hero-badge i {
+      padding: 0.35rem;
+      font-size: 0.7rem;
+    }
+
+    .hero-eyebrow {
+      font-size: 0.9rem !important;
+    }
+
+    .hero-title {
+      font-size: 0.85rem !important;
+      line-height: 1.4;
+    }
+
+    .header-2-nav {
+      flex-direction: column;
+      width: 100%;
+      gap: 0.5rem;
+    }
+
+    .hero-primary-btn,
+    .hero-secondary-btn {
+      width: 100%;
+      padding: 0.65rem 0.8rem;
+      font-size: 0.8rem;
+      justify-content: center;
+    }
+
+    .header-2-data {
+      flex-direction: column;
+      width: 100%;
+      gap: 0.8rem;
+    }
+
+    .div-scholarship,
+    .div-disbursed,
+    .students-helped {
+      width: 100%;
+      text-align: center;
+    }
+
+    .metric-value {
+      font-size: 1.4rem;
+    }
+
+    .metric-label {
+      font-size: 0.8rem;
+    }
+
+    .hero-image {
+      min-height: 200px;
+    }
+
+    /* Sections */
+    .section1,
+    .section2,
+    .section3,
+    .categories-section {
+      padding: 1.5rem 1rem !important;
+    }
+
+    .section1-header h3,
+    .section2-1 h5,
+    .success-header h2,
+    .categories-title {
+      font-size: 1.2rem;
+    }
+
+    .section1-header p,
+    .section2-1 p,
+    .success-header p {
+      font-size: 0.85rem;
+    }
+
+    .section1-cards-div,
+    .section2-2,
+    .success-cards-div,
+    .categories-grid {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+
+    .section1-card,
+    .section2-card,
+    .success-card {
+      padding: 1rem;
+    }
+
+    .section1-article2 h5 {
+      font-size: 1rem;
+    }
+
+    .section1-article2 p,
+    .success-card p {
+      font-size: 0.8rem;
+    }
+
+    .apply-now-btn,
+    .btn-confirm,
+    .btn-cancel {
+      padding: 0.6rem 0.8rem;
+      font-size: 0.8rem;
+    }
+
+    .profile-img {
+      width: 50px;
+      height: 50px;
+      font-size: 1.2rem;
+    }
+
+    .share-btn {
+      padding: 0.4rem 0.6rem;
+      font-size: 0.75rem;
+      width: fit-content;
+      height: fit-content;
+    }
+
+    /* Footer */
     .footer {
-      padding: 2rem 0.75rem 1rem;
+      padding: 1.5rem 0.75rem 1rem;
     }
 
     .footer-grid {
@@ -1291,7 +1621,7 @@
 
     .footer-col p,
     .footer-col a {
-      font-size: 0.9rem;
+      font-size: 0.85rem;
     }
 
     .footer-social {
@@ -1299,21 +1629,383 @@
     }
 
     .footer-social a {
-      width: 38px;
-      height: 38px;
-      font-size: 0.8rem;
+      width: 36px;
+      height: 36px;
+      font-size: 0.75rem;
     }
 
     .newsletter-form {
       flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .newsletter-form input {
+      width: 100%;
+      padding: 0.6rem;
+      font-size: 0.85rem;
     }
 
     .sub-btn {
       width: 100%;
+      padding: 0.6rem 1rem;
+      font-size: 0.8rem;
     }
 
     .footer-bottom {
+      font-size: 0.8rem;
+    }
+
+    /* Popup */
+    .popup {
+      width: 95vw;
+      max-height: 85vh;
+      max-width: 100%;
+      padding: 1rem;
+    }
+
+    .popup h2 {
+      font-size: 1.1rem;
+    }
+
+    .popup-detail {
       font-size: 0.85rem;
+    }
+
+    .popup-buttons {
+      gap: 0.5rem;
+    }
+
+    .btn-confirm,
+    .btn-cancel {
+      flex: 1;
+    }
+  }
+
+  /* Extra Small Mobile (480px and below) */
+  @media (max-width: 480px) {
+    /* Header */
+    .header-1 {
+      padding: 0.75rem 0.5rem;
+    }
+
+    .header-logo a img {
+      height: 2rem;
+    }
+
+    .header-logo a h1 {
+      font-size: 0.9rem;
+      margin-left: 0.4rem;
+    }
+
+    /* Hero Section */
+    .big-div {
+      padding: 0.8rem !important;
+    }
+
+    .hero-badge {
+      font-size: 0.75rem;
+      padding: 0.35rem 0.5rem;
+    }
+
+    .hero-eyebrow {
+      font-size: 0.8rem !important;
+    }
+
+    .hero-title {
+      font-size: 0.75rem !important;
+    }
+
+    .hero-primary-btn,
+    .hero-secondary-btn {
+      padding: 0.5rem 0.6rem;
+      font-size: 0.7rem;
+    }
+
+    .metric-value {
+      font-size: 1.2rem;
+    }
+
+    .metric-label {
+      font-size: 0.75rem;
+    }
+
+    .hero-image {
+      min-height: 150px;
+      border-radius: 12px;
+    }
+
+    .hero-image-frame {
+      padding: 0.8rem;
+      border-radius: 16px;
+    }
+
+    /* Sections */
+    .section1-header h3,
+    .section2-1 h5,
+    .success-header h2,
+    .categories-title {
+      font-size: 1rem;
+    }
+
+    .section1-header p,
+    .section2-1 p,
+    .success-header p {
+      font-size: 0.8rem;
+    }
+
+    .section1-article2 h5 {
+      font-size: 0.9rem;
+    }
+
+    .apply-now-btn,
+    .btn-confirm,
+    .btn-cancel {
+      padding: 0.5rem 0.6rem;
+      font-size: 0.7rem;
+    }
+
+    .profile-img {
+      width: 45px;
+      height: 45px;
+      font-size: 1rem;
+    }
+
+    .share-btn {
+      width: fit-content;
+      height: fit-content;
+      font-size: 0.7rem;
+    }
+
+    /* Success Stories Section */
+    .section3 {
+      width: 96%;
+      margin: 2rem auto;
+      padding: 1.5rem 1rem;
+      border-radius: 20px;
+    }
+
+    .tag {
+      font-size: 0.7rem;
+      padding: 0.4rem 0.8rem;
+    }
+
+    .success-header h2 {
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .subtext {
+      font-size: 0.8rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .success-grid {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+
+    .success-card {
+      padding: 1rem;
+      border-radius: 14px;
+    }
+
+    .s-top {
+      gap: 0.6rem;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .reviewer-avatar {
+      width: 60px;
+      height: 60px;
+      min-width: 60px;
+      border-radius: 12px;
+      font-size: 24px;
+      flex-shrink: 0;
+    }
+
+    .s-top div {
+      gap: 2px;
+      flex: 1;
+      min-width: 0;
+      width: 100%;
+    }
+
+    .s-top h3 {
+      font-size: 1rem;
+      word-break: break-word;
+      overflow-wrap: break-word;
+    }
+
+    .s-top a {
+      font-size: 0.8rem;
+      word-break: break-word;
+      overflow-wrap: break-word;
+    }
+
+    .amount {
+      font-size: 0.75rem;
+      padding: 0.4rem 0.6rem;
+      white-space: nowrap;
+      flex: 0 0 auto;
+    }
+
+    .point {
+      margin: 0.8rem 0 0.6rem;
+      font-size: 0.85rem;
+      word-break: break-word;
+      overflow-wrap: break-word;
+      hyphens: auto;
+    }
+
+    .quote {
+      font-size: 0.8rem;
+      line-height: 1.4;
+      padding-left: 14px;
+      word-break: break-word;
+      overflow-wrap: break-word;
+      word-wrap: break-word;
+      hyphens: auto;
+    }
+
+    .quote::before {
+      font-size: 16px;
+    }
+
+    .share-box {
+      margin-top: 1.5rem;
+    }
+
+    .share-box p {
+      font-size: 0.9rem;
+    }
+
+    /* Footer */
+    .footer {
+      padding: 1rem 0.5rem 0.75rem;
+    }
+
+    .footer-col h3 {
+      font-size: 1rem;
+    }
+
+    .footer-col h4 {
+      font-size: 0.9rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .footer-col p,
+    .footer-col a {
+      font-size: 0.8rem;
+    }
+
+    .footer-social a {
+      width: 32px;
+      height: 32px;
+      font-size: 0.65rem;
+    }
+
+    .newsletter-form input {
+      padding: 0.5rem;
+      font-size: 0.8rem;
+    }
+
+    .sub-btn {
+      padding: 0.5rem 0.8rem;
+      font-size: 0.75rem;
+    }
+
+    /* Popup */
+    .popup {
+      width: 98vw;
+      padding: 0.8rem;
+    }
+
+    .close-btn {
+      font-size: 1.5rem;
+      width: 28px;
+      height: 28px;
+    }
+
+    .popup h2 {
+      font-size: 1rem;
+    }
+
+    .popup-detail {
+      font-size: 0.8rem;
+    }
+  }
+
+  /* Ultra Small Mobile (under 400px) */
+  @media (max-width: 400px) {
+    .section3 {
+      width: 98%;
+      margin: 1.5rem auto;
+      padding: 1rem 0.75rem;
+    }
+
+    .tag {
+      font-size: 0.65rem;
+      padding: 0.35rem 0.7rem;
+    }
+
+    .success-header h2 {
+      font-size: 1rem;
+    }
+
+    .subtext {
+      font-size: 0.75rem;
+      margin-bottom: 1rem;
+    }
+
+    .s-top {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 0.5rem;
+    }
+
+    .reviewer-avatar {
+      width: 55px;
+      height: 55px;
+      min-width: 55px;
+      font-size: 22px;
+    }
+
+    .s-top div {
+      width: 100%;
+    }
+
+    .s-top h3 {
+      font-size: 0.95rem;
+      word-break: break-word;
+      overflow-wrap: break-word;
+    }
+
+    .s-top a {
+      font-size: 0.75rem;
+      word-break: break-word;
+      overflow-wrap: break-word;
+    }
+
+    .amount {
+      font-size: 0.7rem;
+      padding: 0.35rem 0.5rem;
+    }
+
+    .point {
+      font-size: 0.8rem;
+      margin: 0.6rem 0 0.4rem;
+      word-break: break-word;
+      overflow-wrap: break-word;
+    }
+
+    .quote {
+      font-size: 0.75rem;
+      line-height: 1.3;
+      word-break: break-word;
+      overflow-wrap: break-word;
     }
   }
 
