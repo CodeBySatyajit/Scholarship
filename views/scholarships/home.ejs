@@ -203,36 +203,43 @@
     </p>
   </div>
 
-  <% if (reviews && reviews.length > 0) { %>
-  <div class="success-grid">
-    <% reviews.forEach(review => { %>
-    <div class="success-card">
-      <div class="s-top">
-        <div class="reviewer-avatar">
-          <%= review.Name && review.Name.length > 0 ?
-          review.Name.charAt(0).toUpperCase() : '?' %>
-        </div>
-        <div>
-          <h3><%= review.Name || 'Anonymous' %></h3>
-          <a href="#"><%= review.scholarship %></a>
-        </div>
-        <span class="amount"
-          >₹<%= review.Amount && review.Amount.toLocaleString ?
-          review.Amount.toLocaleString() : '0' %></span
-        >
+   <% if (reviews.length === 0) { %>
+      <div class="no-reviews">
+        <i class="fa-regular fa-comment-dots"></i>
+        <p>No reviews yet. Be the first to share your experience!</p>
       </div>
-      <p class="point"><%= review.About || 'No description provided' %></p>
-      <p class="quote">"<%= review.Discription || 'No quote provided' %>"</p>
-    </div>
-    <% }); %>
-  </div>
-  <% } else { %>
-  <div class="no-reviews-success">
-    <i class="fa-regular fa-comment-dots"></i>
-    <p>No success stories shared yet. Be the first to share your experience!</p>
-  </div>
-  <% } %>
+    <% } else { %>
+      <div class="reviews-grid">
+        <% reviews.forEach(review => { %>
+        <div class="review-card">
+          <div class="review-header">
+            <div class="reviewer-info">
+              <div class="reviewer-avatar">
+                <%= review.Name && review.Name.length > 0 ? review.Name.charAt(0).toUpperCase() : '?' %>
+              </div>
+              <div class="reviewer-details">
+                <h3><%= review.Name || 'Anonymous' %></h3>
+                <p class="scholarship-name"><%= review.scholarship %></p>
+              </div>
+            </div>
+            <div class="review-amount">
+              <span class="amount-label">Amount</span>
+              <span class="amount-value">₹<%= review.Amount && review.Amount.toLocaleString ? review.Amount.toLocaleString() : '0' %></span>
+            </div>
+          </div>
 
+          <div class="review-body">
+            <p class="review-summary"><strong><%= review.About || 'No summary provided' %></strong></p>
+            <p class="review-text"><%= review.Discription || 'No description provided' %></p>
+          </div>
+
+          <div class="review-footer">
+            <span class="review-date">Recently shared</span>
+          </div>
+        </div>
+        <% }); %>
+      </div>
+    <% } %>
   <div class="share-box">
     <p>Want to share your success story?</p>
     <a href="/reviews">

@@ -238,6 +238,12 @@
   box-shadow: 0 10px 20px rgba(79, 70, 229, 0.2);
 }
 
+.reviewer-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .reviewer-details h3 {
   margin: 0 0 4px;
   font-size: 16px;
