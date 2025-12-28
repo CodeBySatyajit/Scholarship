@@ -74,7 +74,7 @@ const scholarshipSchema = new Schema({
     CourseCategory : {
         type : String,
         required : false,
-        enum : ['engineering', 'medical', 'management', 'arts', 'science','commerce']
+        enum : ['engineering', 'medical', 'management', 'arts', 'science','commerce', 'other', 'all']
     },
 
     State : {
