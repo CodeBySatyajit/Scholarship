@@ -66,11 +66,16 @@
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    /* Enable horizontal scroll on narrow screens */
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
 }
 
 .scholarships-table {
     width: 100%;
     border-collapse: collapse;
+    /* Keep columns readable when scrolling */
+    min-width: 720px;
 }
 
 .scholarships-table thead {
@@ -193,4 +198,54 @@
     font-size: 2rem;
     font-weight: 700;
     color: #030213;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .admin-dashboard {
+        padding: 1.5rem 1rem;
+    }
+    .dashboard-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    .dashboard-actions {
+        width: 100%;
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 768px) {
+    .admin-dashboard {
+        padding: 1rem 0.75rem;
+    }
+    .dashboard-header h2 {
+        font-size: 1.5rem;
+    }
+    .btn {
+        width: 100%;
+    }
+    .action-buttons {
+        flex-direction: column;
+    }
+    .scholarships-table th,
+    .scholarships-table td {
+        padding: 0.75rem;
+        white-space: nowrap;
+    }
+}
+
+@media (max-width: 480px) {
+    .dashboard-header h2 {
+        font-size: 1.25rem;
+    }
+    .btn-edit,
+    .btn-delete {
+        padding: 0.5rem 0.75rem;
+        font-size: 0.8rem;
+    }
+    .scholarship-title {
+        font-size: 0.95rem;
+    }
 }
