@@ -1,6 +1,7 @@
 const express = require("express");
 const WrapAsync = require("../utils/WrapAsync.js");
 const AdminController = require("../controllers/admin.js");
+const { isAdminNotLoggedIn } = require("../middleware/auth.js");
 
 const router = express.Router();
 
@@ -15,8 +16,8 @@ const isAdminLoggedIn = (req, res, next) => {
 
 // Admin login routes
 router.route("/admin/login")
-    .get(AdminController.renderAdminLoginForm)
-    .post(WrapAsync(AdminController.adminLogin));
+    .get(isAdminNotLoggedIn, AdminController.renderAdminLoginForm)
+    .post(isAdminNotLoggedIn, WrapAsync(AdminController.adminLogin));
 
 // Admin dashboard and protected routes
 router.route("/admin/dashboard")
