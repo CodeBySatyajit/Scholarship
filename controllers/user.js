@@ -43,8 +43,11 @@ module.exports.signupUser = async (req, res) => {
             Mobile: newUser.Mobile
         }
 
-        req.flash("success", "Successfully signed up! Welcome to the platform.");
-        res.redirect("/dashboard");
+        // Ensure session is persisted before redirecting
+        req.session.save(() => {
+            req.flash("success", "Successfully signed up! Welcome to the platform.");
+            res.redirect("/dashboard");
+        });
     } catch (e) {
         req.flash("error", e.message);
         res.redirect("/signup");
@@ -84,8 +87,11 @@ module.exports.loginUser = async (req, res) => {
             Mobile: user.Mobile
         };
 
-        req.flash("success", "Successfully logged in! Welcome back.");
-        res.redirect("/dashboard");
+        // Ensure session is persisted before redirecting
+        req.session.save(() => {
+            req.flash("success", "Successfully logged in! Welcome back.");
+            res.redirect("/dashboard");
+        });
 
     } catch (e) {
         req.flash("error", e.message);

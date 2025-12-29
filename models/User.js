@@ -8,17 +8,38 @@ const registerSchema = new Schema({
   FirstName: {
     type: String,
     required: true,
+    trim: true,
   },
 
   LastName: {
     type: String,
     required: true,
+    trim: true,
   },
 
-  Email: {
+  // Canonical, indexed email used to satisfy the existing unique index (email_1)
+  email: {
     type: String,
     required: true,
     unique: true,
+    lowercase: true,
+    trim: true,
+  },
+
+  // Canonical username used to satisfy the existing unique index (username_1)
+  username: {
+    type: String,
+    required: true,
+    unique: true,
+    lowercase: true,
+    trim: true,
+  },
+
+  // Kept for compatibility with the rest of the codebase (views/controllers use `Email`)
+  Email: {
+    type: String,
+    required: true,
+    trim: true,
   },
 
   Mobile: {
@@ -31,6 +52,23 @@ const registerSchema = new Schema({
     type: String,
     required: true,
   },
+});
+
+// Ensure canonical fields used by unique indexes are always populated
+registerSchema.pre("validate", function () {
+  if (this.Email) {
+    this.email = this.Email.toLowerCase();
+  }
+
+  // Use email as username fallback to satisfy legacy username_1 index
+  if (!this.username && this.Email) {
+    this.username = this.Email.toLowerCase();
+  }
+
+  // As a last resort, fall back to mobile as username to avoid null unique collisions
+  if (!this.username && this.Mobile) {
+    this.username = String(this.Mobile);
+  }
 });
 
 registerSchema.pre("save", async function () {
