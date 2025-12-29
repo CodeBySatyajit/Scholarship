@@ -582,8 +582,10 @@
       gap: 1.3rem;
       margin-top: 1rem;
       align-items: stretch;
-      justify-content: center;   /* center the grid when extra space remains */
-      justify-items: center;     /* center items within their tracks */
+      justify-content: center;
+      /* center the grid when extra space remains */
+      justify-items: center;
+      /* center items within their tracks */
   }
 
   /* existing styles — no change */
@@ -1293,7 +1295,8 @@
       height: 100%;
       background: rgba(0, 0, 0, 0.6);
       display: none;
-      z-index: 1000;
+      z-index: 1600;
+      /* above sticky navbar */
   }
 
   /* Popup box */
@@ -1305,18 +1308,23 @@
       background: linear-gradient(145deg, #ffffff 0%, #f6f7fb 100%);
       width: 90%;
       max-width: 720px;
-      max-height: 90vh; /* keep within viewport */
+      max-height: 90vh;
+      /* keep within viewport */
       padding: 0;
       border-radius: 20px;
       border: 1px solid #e7e9f1;
       box-shadow: 0 18px 50px rgba(3, 2, 19, 0.16);
       display: none;
-      z-index: 1001;
-      overflow: hidden; /* content scrolls inside */
+      z-index: 1601;
+      /* above sticky navbar */
+      overflow: hidden;
+      /* content scrolls inside */
       animation: popupSlideIn 0.3s ease-out;
       isolation: isolate;
-      display: flex;               /* footer always visible */
-      flex-direction: column;      /* header, content, footer */
+      display: flex;
+      /* footer always visible */
+      flex-direction: column;
+      /* header, content, footer */
   }
 
   .popup::before {
@@ -1344,25 +1352,33 @@
   }
 
   .popup h2 {
-      font-size: clamp(1.25rem, 2.5vw, 1.75rem); /* responsive title */
+      font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+      /* responsive title */
       font-weight: 700;
       color: #0f172a;
       margin: 0;
-      padding: 1.5rem 2rem 1rem 1.5rem; /* tighter on small screens */
+      padding: 1.5rem 2rem 1rem 1.5rem;
+      /* tighter on small screens */
       background: linear-gradient(135deg, #eef2ff 0%, #e7e9ff 45%, #fdf2f8 100%);
       border-bottom: 2px solid #e3e6ef;
       flex-shrink: 0;
   }
 
   .popup-content {
-      padding: 1.25rem 1.5rem;     /* safer padding for mobile */
+      padding: 1.25rem 1.5rem;
+      /* safer padding for mobile */
       /* Let flexbox control height so footer stays visible */
       flex: 1 1 auto;
-      min-height: 0;               /* allow internal scrolling in flex */
-      overflow-y: auto;            /* scroll inside modal */
-      -webkit-overflow-scrolling: touch; /* ensure scrolling on iOS */
-      overscroll-behavior: contain;      /* prevent page scroll chaining */
-      max-height: calc(90vh - 160px);    /* fallback cap for small screens */
+      min-height: 0;
+      /* allow internal scrolling in flex */
+      overflow-y: auto;
+      /* scroll inside modal */
+      -webkit-overflow-scrolling: touch;
+      /* ensure scrolling on iOS */
+      overscroll-behavior: contain;
+      /* prevent page scroll chaining */
+      max-height: calc(90vh - 160px);
+      /* fallback cap for small screens */
       background: linear-gradient(145deg, #ffffff 0%, #f8f9fb 100%);
   }
 
@@ -1454,8 +1470,10 @@
       padding: 1rem 1.5rem;
       border-top: 2px solid #e3e6ef;
       background: linear-gradient(135deg, #eef2ff 0%, #e7e9ff 45%, #fdf2f8 100%);
-      flex-shrink: 0;              /* keep visible */
-      position: sticky;            /* stay at bottom if container scrolls */
+      flex-shrink: 0;
+      /* keep visible */
+      position: sticky;
+      /* stay at bottom if container scrolls */
       bottom: 0;
       z-index: 2;
   }
@@ -1533,23 +1551,28 @@
           width: 94%;
           max-width: 700px;
       }
+
       .popup h2 {
           padding: 1.25rem 1.25rem 0.85rem 1.25rem;
       }
+
       .popup-content {
           padding: 1rem 1rem;
       }
+
       .popup-buttons {
           padding: 0.75rem 1rem;
           gap: 0.75rem;
           flex-wrap: wrap;
       }
+
       .btn-confirm,
       .btn-cancel {
           padding: 0.85rem 1rem;
           font-size: 1rem;
           flex: 1 1 48%;
       }
+
       .close-btn {
           width: 44px;
           height: 44px;
@@ -1562,19 +1585,25 @@
           width: 96%;
           max-width: 480px;
       }
+
       .popup h2 {
           padding: 1rem 1rem 0.75rem 1rem;
       }
+
       .popup-content {
           padding: 0.85rem 0.9rem;
       }
+
       .popup-buttons {
           gap: 0.6rem;
       }
+
       .btn-confirm,
       .btn-cancel {
-          flex: 1 1 100%; /* stack if constrained */
+          flex: 1 1 100%;
+          /* stack if constrained */
       }
+
       .close-btn {
           width: 46px;
           height: 46px;
