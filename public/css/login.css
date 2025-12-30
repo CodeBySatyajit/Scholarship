@@ -229,7 +229,6 @@ body {
     gap: 0.75rem;
     transition: all 0.2s ease;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-    margin-top: 1.2rem;
 }
 
 .google-btn:hover {
@@ -247,4 +246,219 @@ body {
     width: 20px;
     height: 20px;
     flex-shrink: 0;
+}
+
+/* Responsive Design */
+
+/* Tablet (768px and below) */
+@media (max-width: 768px) {
+    .student-container {
+        flex-direction: column;
+        min-height: auto;
+    }
+
+    .student-left {
+        min-height: 240px;
+        padding: 2rem;
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .student-left-text h2 {
+        font-size: 1.6rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .student-left-text p {
+        font-size: 0.95rem;
+    }
+
+    .student-right {
+        padding: 2rem 1.5rem;
+        min-height: auto;
+    }
+
+    .student-card {
+        width: min(100%, 92%);
+        padding: 2rem;
+        gap: 1.2rem;
+        margin-top: -3rem;
+    }
+
+    .student-logo-box h3 {
+        font-size: 1.35rem;
+    }
+
+    .student-btn,
+    .google-btn {
+        padding: 0.9rem;
+        font-size: 0.95rem;
+    }
+}
+
+/* Mobile (480px and below) */
+@media (max-width: 480px) {
+    body {
+        background: #f7f7fb;
+    }
+
+    .student-container {
+        flex-direction: column;
+    }
+
+    .student-left {
+        min-height: 180px;
+        padding: 1.5rem;
+        justify-content: flex-end;
+    }
+
+    .student-left-text h2 {
+        font-size: 1.35rem;
+        line-height: 1.3;
+    }
+
+    .student-left-text p {
+        font-size: 0.9rem;
+    }
+
+    .student-right {
+        padding: 1.5rem 1rem;
+        min-height: auto;
+    }
+
+    .student-card {
+        width: 100%;
+        padding: 1.5rem;
+        gap: 1rem;
+        border-radius: 16px;
+        margin-top: 0;
+        box-shadow: 0 12px 22px rgba(16, 24, 40, 0.08);
+    }
+
+    .student-logo {
+        width: 56px;
+        height: 56px;
+    }
+
+    .student-logo i {
+        font-size: 1.1rem;
+    }
+
+    .student-logo-box h3 {
+        font-size: 1.25rem;
+        margin: 0.1rem 0;
+    }
+
+    .student-logo-box p {
+        font-size: 0.88rem;
+    }
+
+    .student-form {
+        gap: 0.8rem;
+    }
+
+    .student-form input[type="email"],
+    .student-form input[type="password"] {
+        padding: 0.85rem;
+        font-size: 0.9rem;
+        border-radius: 10px;
+    }
+
+    .student-btn {
+        padding: 0.85rem;
+        font-size: 0.9rem;
+        border-radius: 10px;
+        box-shadow: 0 10px 20px rgba(79, 70, 229, 0.28);
+    }
+
+    .student-divider {
+        margin: 1.1rem 0;
+        font-size: 12px;
+        gap: 0.5rem;
+    }
+
+    .google-btn {
+        padding: 0.85rem;
+        font-size: 0.9rem;
+        border-radius: 10px;
+        gap: 0.6rem;
+        box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+    }
+
+    .google-icon {
+        width: 18px;
+        height: 18px;
+    }
+
+    .student-bottom-links {
+        font-size: 0.9rem;
+        margin-top: 0.4rem;
+    }
+}
+
+/* Extra small devices (360px and below) */
+@media (max-width: 360px) {
+    .student-left {
+        min-height: 150px;
+        padding: 1.2rem;
+    }
+
+    .student-left-text h2 {
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .student-right {
+        padding: 1.1rem 1rem;
+    }
+
+    .student-card {
+        padding: 1.2rem;
+        gap: 0.9rem;
+    }
+
+    .student-logo {
+        width: 50px;
+        height: 50px;
+    }
+
+    .student-form input[type="email"],
+    .student-form input[type="password"] {
+        padding: 0.8rem;
+        font-size: 0.85rem;
+    }
+
+    .student-btn,
+    .google-btn {
+        padding: 0.8rem;
+        font-size: 0.85rem;
+    }
+
+    .student-divider {
+        font-size: 11px;
+        margin: 0.9rem 0;
+    }
+}
+
+/* Landscape mode adjustments */
+@media (max-height: 600px) and (max-width: 768px) {
+    .student-left {
+        min-height: 150px;
+        padding: 1rem;
+    }
+
+    .student-left-text h2 {
+        font-size: 1.25rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .student-card {
+        padding: 1.5rem;
+        gap: 1rem;
+        margin-top: 0;
+    }
+
+    .student-logo-box h3 {
+        font-size: 1.15rem;
+    }
 }
