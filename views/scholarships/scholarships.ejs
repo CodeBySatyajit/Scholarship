@@ -255,59 +255,70 @@
         <div class="section1-grid">
           <!-- CARD -->
 
-          <% for(let scholarship of scholarships) { %>
-          <div class="section1-card" data-scholarship-id="<%= scholarship._id %>">
-            <div class="section1-article1">
-              <div class="info1"><%= scholarship.type %></div>
-              <div class="info2">
-                <% if (currentUser) { %>
-                  <% const isBookmarked = savedScholarshipIds && savedScholarshipIds.includes(scholarship._id.toString()); %>
-                  <button class="bookmark-btn <%= isBookmarked ? 'bookmarked' : '' %>" data-scholarship-id="<%= scholarship._id %>" title="<%= isBookmarked ? 'Remove from saved' : 'Save scholarship' %>">
-                    <i class="<%= isBookmarked ? 'fa-solid' : 'fa-regular' %> fa-bookmark"></i>
-                  </button>
-                <% } %>
-                <i class="fa-solid fa-arrow-trend-up"></i><span>Trending</span>
+          <% if (scholarships && scholarships.length > 0) { %>
+            <% for(let scholarship of scholarships) { %>
+            <div class="section1-card" data-scholarship-id="<%= scholarship._id %>">
+              <div class="section1-article1">
+                <div class="info1"><%= scholarship.type %></div>
+                <div class="info2">
+                  <% if (currentUser) { %>
+                    <% const isBookmarked = savedScholarshipIds && savedScholarshipIds.includes(scholarship._id.toString()); %>
+                    <button class="bookmark-btn <%= isBookmarked ? 'bookmarked' : '' %>" data-scholarship-id="<%= scholarship._id %>" title="<%= isBookmarked ? 'Remove from saved' : 'Save scholarship' %>">
+                      <i class="<%= isBookmarked ? 'fa-solid' : 'fa-regular' %> fa-bookmark"></i>
+                    </button>
+                  <% } %>
+                  <i class="fa-solid fa-arrow-trend-up"></i><span>Trending</span>
+                </div>
+              </div>
+              <div class="section1-article2">
+                <h5><%= scholarship.title %></h5>
+                <p class="i1">
+                  <i class="fa-solid fa-indian-rupee-sign"></i> Amount : <%=
+                  scholarship.Amount.toLocaleString() %>
+                </p>
+                <p class="i1">
+                  <i class="fa-regular fa-calendar"></i> Deadline : <%=
+                  scholarship.Deadline.toLocaleDateString("en-GB") %>
+                </p>
+                <p class="i1">
+                  Eligibility : <%= scholarship.Eligibility.substring(0, 50) %>...
+                </p>
+              </div>
+              <div class="section3-article3">
+                <button
+                  style="width: 100%"
+                  class="apply-now-btn"
+                  data-link="<%= scholarship.ApplyLink %>"
+                  data-title="<%= scholarship.title %>"
+                  data-type="<%= scholarship.type %>"
+                  data-amount="<%= scholarship.Amount.toLocaleString() %>"
+                  data-about="<%= scholarship.About %>"
+                  data-eligibility="<%= scholarship.Eligibility %>"
+                  data-deadline="<%= scholarship.Deadline.toLocaleDateString('en-GB') %>"
+                  data-benefits="<%= scholarship.Benefits %>"
+                  data-region="<%= scholarship.Region %>"
+                  data-education="<%= scholarship.Education %>"
+                  data-documents="<%= scholarship.Documents %>"
+                  data-Gender="<%= scholarship.Gender %>"
+                  data-Category="<%= scholarship.Category %>"
+                  data-CourseCategory="<%= scholarship.CourseCategory %>"
+                  data-State="<%= scholarship.State %>"
+                  data-note="<%= scholarship.Note %>"
+                >
+                  Apply Now
+                </button>
               </div>
             </div>
-            <div class="section1-article2">
-              <h5><%= scholarship.title %></h5>
-              <p class="i1">
-                <i class="fa-solid fa-indian-rupee-sign"></i> Amount : <%=
-                scholarship.Amount.toLocaleString() %>
+            <% } %>
+          <% } else { %>
+            <div style="grid-column: 1 / -1; text-align: center; padding: 60px 20px;">
+              <i class="bi bi-search" style="font-size: 3rem; color: #ccc; margin-bottom: 20px; display: block;"></i>
+              <h3 style="color: #666; margin: 20px 0; font-weight: 600;">No Scholarships Found</h3>
+              <p style="color: #999; margin-bottom: 30px; font-size: 1rem;">
+                We couldn't find any scholarships matching your filters. Try adjusting your search criteria.
               </p>
-              <p class="i1">
-                <i class="fa-regular fa-calendar"></i> Deadline : <%=
-                scholarship.Deadline.toLocaleDateString("en-GB") %>
-              </p>
-              <p class="i1">
-                Eligibility : <%= scholarship.Eligibility.substring(0, 50) %>...
-              </p>
+              <a href="/scholarships" style="display: inline-block; padding: 12px 32px; background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #ec4899 100%); color: #f8fafc; text-decoration: none; border-radius: 14px; font-weight: 700; font-size: 1rem; letter-spacing: 0.35px; box-shadow: 0 14px 32px rgba(124, 58, 237, 0.32); transition: transform 0.22s ease, box-shadow 0.22s ease, filter 0.22s ease; border: 1px solid rgba(255, 255, 255, 0.2);" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 18px 40px rgba(124, 58, 237, 0.38)'; this.style.filter='brightness(1.05)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 14px 32px rgba(124, 58, 237, 0.32)'; this.style.filter='brightness(1)';">Clear Filters</a>
             </div>
-            <div class="section3-article3">
-              <button
-                style="width: 100%"
-                class="apply-now-btn"
-                data-link="<%= scholarship.ApplyLink %>"
-                data-title="<%= scholarship.title %>"
-                data-type="<%= scholarship.type %>"
-                data-amount="<%= scholarship.Amount.toLocaleString() %>"
-                data-about="<%= scholarship.About %>"
-                data-eligibility="<%= scholarship.Eligibility %>"
-                data-deadline="<%= scholarship.Deadline.toLocaleDateString('en-GB') %>"
-                data-benefits="<%= scholarship.Benefits %>"
-                data-region="<%= scholarship.Region %>"
-                data-education="<%= scholarship.Education %>"
-                data-documents="<%= scholarship.Documents %>"
-                data-Gender="<%= scholarship.Gender %>"
-                data-Category="<%= scholarship.Category %>"
-                data-CourseCategory="<%= scholarship.CourseCategory %>"
-                data-State="<%= scholarship.State %>"
-                data-note="<%= scholarship.Note %>"
-              >
-                Apply Now
-              </button>
-            </div>
-          </div>
           <% } %>
 
           <!-- add card from here -->
